@@ -1,0 +1,549 @@
+import { SupportedLanguage } from '../types';
+
+export interface TranslationStrings {
+  appName: string;
+  tagline: string;
+  badge: string;
+  listenAudio: string;
+  stopAudio: string;
+  voiceGuide: string;
+  askAssistant: string;
+  selectLanguage: string;
+  steps: {
+    businessProfile: string;
+    informalProof: string;
+    aiAnalysis: string;
+    schemeMatches: string;
+    bankDossier: string;
+  };
+  businessTypes: {
+    tailor: string;
+    dairy: string;
+    fabrication: string;
+    shg_enterprise: string;
+    kirana: string;
+    vishwakarma_artisan: string;
+  };
+  prompts: {
+    heroWelcome: string;
+    chooseBusinessAudio: string;
+    recordUploadAudio: string;
+    analysisAudio: string;
+    dossierAudio: string;
+  };
+  labels: {
+    monthlyIncome: string;
+    loanAmount: string;
+    category: string;
+    gender: string;
+    village: string;
+    district: string;
+    uploadRecords: string;
+    orChoosePreset: string;
+    analyzeRecords: string;
+    viewSchemes: string;
+    generateDossier: string;
+    middlemanCutWarning: string;
+    moneylenderCostWarning: string;
+    estimatedSubsidy: string;
+    dscrMetric: string;
+    riskScore: string;
+    consentStatement: string;
+    branchManagerTitle: string;
+    fieldQuestionsTitle: string;
+    approvedByEntrepreneur: string;
+    downloadDossier: string;
+    printDossier: string;
+  };
+}
+
+export const TRANSLATIONS: Record<SupportedLanguage, TranslationStrings> = {
+  hi: {
+    appName: 'सहाय क्रेडिट AI',
+    tagline: 'ग्रामीण उद्यमियों के लिए सीधी सरकारी योजना व बैंक लोन साथी',
+    badge: 'दलाल-मुक्त · ITR की आवश्यकता नहीं · 100% नि:शुल्क',
+    listenAudio: 'बोलकर सुनें',
+    stopAudio: 'आवाज रोकें',
+    voiceGuide: 'आवाज से समझें',
+    askAssistant: 'सहाय मित्र से पूछें',
+    selectLanguage: 'भाषा चुनें',
+    steps: {
+      businessProfile: '1. व्यवसाय व गांव',
+      informalProof: '2. बही खाता / UPI',
+      aiAnalysis: '3. लोन क्षमता जांच',
+      schemeMatches: '4. सरकारी योजनाएं',
+      bankDossier: '5. बैंक अर्जी व रिपोर्ट',
+    },
+    businessTypes: {
+      tailor: 'दर्जी व सिलाई केंद्र',
+      dairy: 'डेयरी व दुग्ध पालन',
+      fabrication: 'वेल्डिंग व लोहा कार्य',
+      shg_enterprise: 'महिला स्वयं सहायता समूह',
+      kirana: 'किराना व ग्रामीण दुकान',
+      vishwakarma_artisan: 'बढ़ई / लोहार / पारंपरिक कारीगर',
+    },
+    prompts: {
+      heroWelcome:
+        'नमस्ते! सहाय-क्रेडिट में आपका स्वागत है। अगर आपके पास ITR या बड़े कागजात नहीं हैं, फिर भी आपका UPI लेन-देन या कच्चा बही-खाता बैंक लोन के लिए पूरा मान्य है। किसी दलाल को 10-15% कमीशन न दें। आइए अपनी योजना देखें।',
+      chooseBusinessAudio:
+        'कृपया अपना व्यवसाय चुनें जैसे दर्जी, डेयरी, वेल्डिंग या महिला समूह। इसके बाद बताएं कि आपको अपने काम को बढ़ाने के लिए कितने लोन की जरूरत है।',
+      recordUploadAudio:
+        'आप अपना फोनपे/गूगल-पे QR स्क्रीनशॉट, डायरी का पन्ना या डेयरी की दूध पर्ची अपलोड कर सकते हैं, या हमारे तैयार उदाहरण में से चुन सकते हैं।',
+      analysisAudio:
+        'सहाय-क्रेडिट AI आपके लेन-देन की जांच कर रहा है ताकि बैंक मैनेजर को स्पष्ट दिखे कि आप हर महीने समय पर किस्त चुका सकते हैं।',
+      dossierAudio:
+        'बधाई हो! आपकी बैंक-रेडी रिपोर्ट तैयार है। इसमें सरकारी सब्सिडी और मुद्रा योजना का पूरा विवरण है। इसे सीधे बैंक मैनेजर को दिखाएं।',
+    },
+    labels: {
+      monthlyIncome: 'औसत मासिक बिक्री / कमाई (₹)',
+      loanAmount: 'जरूरी लोन राशि (₹)',
+      category: 'सामाजिक वर्ग (आरक्षण व सब्सिडी लाभ हेतु)',
+      gender: 'लिंग',
+      village: 'गांव का नाम',
+      district: 'जिला',
+      uploadRecords: 'कच्चा बही-खाता / UPI पर्ची दर्ज करें',
+      orChoosePreset: 'या हमारे तैयार गांव के उदाहरण चुनें:',
+      analyzeRecords: 'लोन पात्रता व सब्सिडी जांचें',
+      viewSchemes: 'पात्र सरकारी योजनाएं देखें',
+      generateDossier: 'बैंक मैनेजर हेतु प्रमाणित रिपोर्ट बनाएं',
+      middlemanCutWarning: 'दलाल 10-15% (₹30,000+) खा जाते हैं - यहाँ शून्य शुल्क!',
+      moneylenderCostWarning: 'साहूकार 24-36% ब्याज लेते हैं - सरकारी योजना में सिर्फ 5-9%!',
+      estimatedSubsidy: 'अनुमानित सरकारी अनुदान (सब्सिडी):',
+      dscrMetric: 'किस्त चुकाने की क्षमता (DSCR):',
+      riskScore: 'विश्वसनीयता अंक (Risk Score):',
+      consentStatement: 'मेरी सहमति से मेरी वित्तीय जानकारी केवल बैंक अर्जी हेतु उपयोग की जाएगी।',
+      branchManagerTitle: 'बैंक शाखा प्रबंधक / बैंक मित्र डेस्क',
+      fieldQuestionsTitle: 'जमीनी हकीकत व 6 प्रमुख सवाल (PDF रिपोर्ट)',
+      approvedByEntrepreneur: 'उद्यमी द्वारा सत्यापित व स्वीकृत',
+      downloadDossier: 'बैंक रिपोर्ट डाउनलोड करें',
+      printDossier: 'प्रिंट / पीडीएफ निकालें',
+    },
+  },
+  en: {
+    appName: 'SahayCredit AI',
+    tagline: 'Formal Credit & Government Schemes Bridge for Village Enterprises',
+    badge: 'Zero Middlemen · No ITR Required · 100% Free',
+    listenAudio: 'Listen Audio',
+    stopAudio: 'Stop Audio',
+    voiceGuide: 'Audio Guide',
+    askAssistant: 'Ask Sahay Mitra',
+    selectLanguage: 'Language',
+    steps: {
+      businessProfile: '1. Business & Village',
+      informalProof: '2. Ledger / UPI Records',
+      aiAnalysis: '3. Capacity Analysis',
+      schemeMatches: '4. Eligible Schemes',
+      bankDossier: '5. Bank-Ready Dossier',
+    },
+    businessTypes: {
+      tailor: 'Tailoring & Apparel',
+      dairy: 'Dairy & Cattle Unit',
+      fabrication: 'Welding & Fabrication',
+      shg_enterprise: 'Women SHG Enterprise',
+      kirana: 'Village Kirana & Retail',
+      vishwakarma_artisan: 'Carpenter / Blacksmith / Artisan',
+    },
+    prompts: {
+      heroWelcome:
+        'Welcome to SahayCredit AI. If you are a village micro-entrepreneur with steady UPI flows or informal ledger records but no ITR, you qualify for official schemes like MUDRA, PMEGP, and PM Vishwakarma. Never pay 10-15% cuts to corrupt middlemen.',
+      chooseBusinessAudio:
+        'Please select your business type and enter the loan amount you need to expand your machines, inventory, or livestock.',
+      recordUploadAudio:
+        'Upload your daily UPI QR statement, handwritten khata diary, or cooperative milk pour slip, or test with one of our realistic village presets.',
+      analysisAudio:
+        'SahayCredit AI is validating your cash velocity and debt service coverage ratio to create an explainable, risk-calibrated credit appraisal note for the branch manager.',
+      dossierAudio:
+        'Your certified Bank-Ready Viability Dossier is ready, complete with official scheme citations, margin money subsidy calculations, and DSCR metrics.',
+    },
+    labels: {
+      monthlyIncome: 'Monthly Revenue / Sales (₹)',
+      loanAmount: 'Required Loan Amount (₹)',
+      category: 'Social Category (for subsidy eligibility)',
+      gender: 'Gender',
+      village: 'Village Name',
+      district: 'District',
+      uploadRecords: 'Enter / Paste Informal Records or Ledger',
+      orChoosePreset: 'Or Choose a Realistic Village Preset:',
+      analyzeRecords: 'Analyze Credit & Check Schemes',
+      viewSchemes: 'View Matched Schemes',
+      generateDossier: 'Generate Bank-Ready Dossier',
+      middlemanCutWarning: 'Middlemen take 10-15% (₹30,000+) - Save 100% here!',
+      moneylenderCostWarning: 'Moneylenders charge 24-36% - Government schemes offer 5-9.5%!',
+      estimatedSubsidy: 'Estimated Govt Subsidy / Grant:',
+      dscrMetric: 'Debt Service Coverage (DSCR):',
+      riskScore: 'Credit Viability Score:',
+      consentStatement: 'I give consent to use my business records solely for formal loan processing.',
+      branchManagerTitle: 'Bank Branch Manager / Bank Mitra Portal',
+      fieldQuestionsTitle: 'Field Questions & Ground Reality (from PDF)',
+      approvedByEntrepreneur: 'Verified & Approved by Entrepreneur',
+      downloadDossier: 'Download Bank Dossier',
+      printDossier: 'Print Dossier',
+    },
+  },
+  ta: {
+    appName: 'சஹாய் கிரெடிட் AI',
+    tagline: 'கிராமப்புற சிறு வணிகங்களுக்கான நேரடி வங்கி கடன் & திட்ட வழிகாட்டி',
+    badge: 'இடைத்தரகர் இல்லாதது · ITR தேவையில்லை · இலவசம்',
+    listenAudio: 'குரல் வழிகாட்டல்',
+    stopAudio: 'நிறுத்து',
+    voiceGuide: 'ஒலி விளக்கம்',
+    askAssistant: 'உதவி கேட்க',
+    selectLanguage: 'மொழி',
+    steps: {
+      businessProfile: '1. வணிக விவரம்',
+      informalProof: '2. கணக்கு ஏடு / UPI',
+      aiAnalysis: '3. கடன் தகுதி ஆய்வு',
+      schemeMatches: '4. அரசு திட்டங்கள்',
+      bankDossier: '5. வங்கி அறிக்கை',
+    },
+    businessTypes: {
+      tailor: 'தையல் கடை & ஆடை உற்பத்தி',
+      dairy: 'பால் பண்ணை & மாடு வளர்ப்பு',
+      fabrication: 'வெல்டிங் & பட்டறை',
+      shg_enterprise: 'சுயஉதவி குழு தொழில்',
+      kirana: 'மளிகை & கிராம கடை',
+      vishwakarma_artisan: 'ஆசாரி / தட்டார் / பாரம்பரிய கலைஞர்',
+    },
+    prompts: {
+      heroWelcome:
+        'வணக்கம்! சஹாய் கிரெடிட் உங்களை வரவேற்கிறது. உங்களிடம் ITR இல்லாவிட்டாலும், UPI மற்றும் கணக்கு ஏடு பதிவுகள் கொண்டு முத்ரா மற்றும் PMEGP கடன் பெறலாம். இடைத்தரகர்களுக்கு பணம் தராதீர்கள்.',
+      chooseBusinessAudio:
+        'உங்கள் தொழில் வகையைத் தேர்ந்தெடுத்து, தேவைப்படும் கடன் தொகையை உள்ளிடவும்.',
+      recordUploadAudio:
+        'உங்கள் UPI பரிவர்த்தனை அல்லது பால் விநியோக சீட்டை உள்ளிடவும் அல்லது மாதிரி உதாரணத்தைத் தேர்வு செய்யவும்.',
+      analysisAudio:
+        'உங்கள் வருமானம் மற்றும் கடன் திருப்பிச் செலுத்தும் திறன் பகுப்பாய்வு செய்யப்படுகிறது.',
+      dossierAudio:
+        'உங்கள் வங்கி கடன் அறிக்கை தயாராக உள்ளது. அரசு மானிய விவரங்கள் இதில் இணைக்கப்பட்டுள்ளன.',
+    },
+    labels: {
+      monthlyIncome: 'மாத வருமானம் (₹)',
+      loanAmount: 'தேவைப்படும் கடன் (₹)',
+      category: 'பிரிவு (மானிய தகுதிக்கு)',
+      gender: 'பாலினம்',
+      village: 'கிராமம்',
+      district: 'மாவட்டம்',
+      uploadRecords: 'கணக்கு ஏடு / UPI விவரங்களை உள்ளிடவும்',
+      orChoosePreset: 'மாதிரி உதாரணத்தைத் தேர்வு செய்க:',
+      analyzeRecords: 'தகுதியை சரிபார்க்கவும்',
+      viewSchemes: 'திட்டங்களை பார்க்க',
+      generateDossier: 'வங்கி அறிக்கையை உருவாக்கவும்',
+      middlemanCutWarning: 'இடைத்தரகர்கள் 10-15% அபகரிக்கின்றனர் - இங்கே 0% கட்டணம்!',
+      moneylenderCostWarning: 'கந்துவட்டிக்காரர்கள் 24-36% வசூலிக்கின்றனர் - வங்கியில் 5-9% மட்டுமே!',
+      estimatedSubsidy: 'அரசு மானிய தொகை:',
+      dscrMetric: 'திருப்பிச் செலுத்தும் திறன் (DSCR):',
+      riskScore: 'நம்பகத்தன்மை புள்ளி:',
+      consentStatement: 'எனது ஒப்புதலுடன் இந்த தரவு வங்கி பயன்பாட்டிற்கு மட்டுமே பயன்படுத்தப்படும்.',
+      branchManagerTitle: 'வங்கி மேலாளர் போர்டல்',
+      fieldQuestionsTitle: 'கள கேள்விகள் & நடைமுறை நிலவரம்',
+      approvedByEntrepreneur: 'தொழில்முனைவோரால் சரிபார்க்கப்பட்டது',
+      downloadDossier: 'அறிக்கையை பதிவிறக்கு',
+      printDossier: 'அச்சு எடுக்க',
+    },
+  },
+  te: {
+    appName: 'సహాయ్ క్రెడిట్ AI',
+    tagline: 'గ్రామీణ సూక్ష్మ వ్యాపారాలకు ప్రభుత్వ పథకాలు & బ్యాంక్ లోన్ తోడ్పాటు',
+    badge: 'దళారులు లేని సేవ · ITR అవసరం లేదు · 100% ఉచితం',
+    listenAudio: 'వినండి',
+    stopAudio: 'ఆపండి',
+    voiceGuide: 'వాయిస్ గైడ్',
+    askAssistant: 'సహాయ్ మిత్రను అడగండి',
+    selectLanguage: 'భాషను ఎంచుకోండి',
+    steps: {
+      businessProfile: '1. వ్యాపారం & గ్రామం',
+      informalProof: '2. ఖాతా బుక్ / UPI',
+      aiAnalysis: '3. లోన్ అర్హత పరిశీలన',
+      schemeMatches: '4. ప్రభుత్వ పథకాలు',
+      bankDossier: '5. బ్యాంక్ నివేదిక',
+    },
+    businessTypes: {
+      tailor: 'టైలరింగ్ & వస్త్ర దుకాణం',
+      dairy: 'డైరీ & పాడి పరిశ్రమ',
+      fabrication: 'వెల్డింగ్ & ఇనుప పనులు',
+      shg_enterprise: 'మహిళా స్వయం సహాయక సంఘం',
+      kirana: 'కిరాణా & నిత్యావసర సరుకుల దుకాణం',
+      vishwakarma_artisan: 'వడ్రంగి / కమ్మరి / చేతివృత్తులు',
+    },
+    prompts: {
+      heroWelcome:
+        'నమస్కారం! సహాయ్ క్రెడిట్ కి స్వాగతం. ITR లేదా ఆడిట్ పత్రాలు లేకపోయినా, మీ UPI చెల్లింపులు మరియు ఖాతా పుస్తకం ద్వారా ముద్రా, PMEGP వంటి పథకాల్లో లోన్ పొందవచ్చు.',
+      chooseBusinessAudio:
+        'మీ వ్యాపారాన్ని ఎంచుకోండి మరియు ఎంత లోన్ కావాలో నమోదు చేయండి.',
+      recordUploadAudio:
+        'మీ UPI రికార్డులు లేదా డైరీ పేజీని నమోదు చేయండి లేదా మా గ్రామీణ ఉదాహరణలను ఎంచుకోండి.',
+      analysisAudio:
+        'మీ వ్యాపార ఆదాయం మరియు బ్యాంక్ కిస్తీ చెల్లించే సామర్థ్యాన్ని పరిశీలిస్తున్నాము.',
+      dossierAudio:
+        'మీ బ్యాంక్ లోన్ నివేదిక సిద్ధమైంది. ఇందులో ప్రభుత్వ సబ్సిడీ వివరాలు ఉన్నాయి.',
+    },
+    labels: {
+      monthlyIncome: 'నెలవారీ అమ్మకాలు / రాబడి (₹)',
+      loanAmount: 'కావలసిన లోన్ మొత్తం (₹)',
+      category: 'సామాజిక వర్గం',
+      gender: 'లింగం',
+      village: 'గ్రామం',
+      district: 'జిల్లా',
+      uploadRecords: 'ఖాతా పుస్తకం / UPI వివరాలు నమోదు చేయండి',
+      orChoosePreset: 'లేదా సిద్ధంగా ఉన్న ఉదాహరణను ఎంచుకోండి:',
+      analyzeRecords: 'అర్హత & సబ్సిడీని తనిఖీ చేయండి',
+      viewSchemes: 'పథకాలను చూడండి',
+      generateDossier: 'బ్యాంక్ నివేదికను రూపొందించండి',
+      middlemanCutWarning: 'దళారులు 10-15% కమీషన్ తింటారు - ఇక్కడ ఉచితం!',
+      moneylenderCostWarning: 'వడ్డీ వ్యాపారులు 24-36% వసూలు చేస్తారు - ప్రభుత్వ పథకంలో కేవలం 5-9%!',
+      estimatedSubsidy: 'అంచనా వేసిన ప్రభుత్వ సబ్సిడీ:',
+      dscrMetric: 'చెల్లింపు సామర్థ్యం (DSCR):',
+      riskScore: 'విశ్వసనీయత స్కోర్:',
+      consentStatement: 'నా పూర్తి సమ్మతితోనే ఈ వివరాలు బ్యాంక్ దరఖాస్తు కోసం ఉపయోగించబడుతున్నాయి.',
+      branchManagerTitle: 'బ్యాంక్ బ్రాంచ్ మేనేజర్ పోర్టల్',
+      fieldQuestionsTitle: 'ఫీల్డ్ ప్రశ్నలు & క్షేత్రస్థాయి విశ్లేషణ',
+      approvedByEntrepreneur: 'వ్యాపారి చేత ధృవీకరించబడింది',
+      downloadDossier: 'నివేదికను డౌన్‌లోడ్ చేయండి',
+      printDossier: 'ప్రింట్ తీయండి',
+    },
+  },
+  mr: {
+    appName: 'सहाय क्रेडिट AI',
+    tagline: 'ग्रामीण उद्योजकांसाठी थेट सरकारी योजना व बँक कर्ज मार्गदर्शक',
+    badge: 'दलालमुक्त · ITR ची गरज नाही · 100% मोफत',
+    listenAudio: 'ऐका',
+    stopAudio: 'थांबवा',
+    voiceGuide: 'आवाज मार्गदर्शक',
+    askAssistant: 'सहाय मित्राला विचारा',
+    selectLanguage: 'भाषा निवडा',
+    steps: {
+      businessProfile: '१. व्यवसाय व गाव',
+      informalProof: '२. वही खाते / UPI',
+      aiAnalysis: '३. कर्ज क्षमता तपासणी',
+      schemeMatches: '४. सरकारी योजना',
+      bankDossier: '५. बँक अहवाल',
+    },
+    businessTypes: {
+      tailor: 'शिंपी व टेलरिंग केंद्र',
+      dairy: 'दुग्ध व्यवसाय व गोपालन',
+      fabrication: 'वेल्डिंग व फॅब्रिकेशन वर्कशॉप',
+      shg_enterprise: 'महिला बचत गट उद्योग',
+      kirana: 'किराणा व जनरल स्टोअर',
+      vishwakarma_artisan: 'सुतार / लोहार / विश्वकर्मा कारागीर',
+    },
+    prompts: {
+      heroWelcome:
+        'नमस्कार! सहाय क्रेडिट मध्ये आपले स्वागत आहे. ITR किंवा मोठे कागदपत्रे नसली तरीही तुमचे UPI व्यवहार आणि कच्ची वही बँक कर्जासाठी पुरेशी आहे. दलालाला कमिशन देऊ नका.',
+      chooseBusinessAudio:
+        'कृपया आपला व्यवसाय निवडा आणि व्यवसाय वाढवण्यासाठी किती कर्ज हवे आहे ते सांगा.',
+      recordUploadAudio:
+        'तुमचा PhonePe/Google Pay क्यूआर कोड व्यवहार किंवा दुधाची पावती जोडा किंवा आमचे उदाहरण निवडा.',
+      analysisAudio:
+        'आपल्या मासिक नफ्याची आणि हप्ता फेडण्याच्या क्षमतेची AI द्वारे पडताळणी होत आहे.',
+      dossierAudio:
+        'तुमचा बँक-रेडी अहवाल तयार आहे. यात शासकीय अनुदानाची (सब्सिडी) पूर्ण माहिती आहे.',
+    },
+    labels: {
+      monthlyIncome: 'मासिक सरासरी विक्री / कमाई (₹)',
+      loanAmount: 'आवश्यक कर्ज रक्कम (₹)',
+      category: 'सामाजिक प्रवर्ग',
+      gender: 'लिंग',
+      village: 'गाव',
+      district: 'जिल्हा',
+      uploadRecords: 'वही खाते किंवा UPI तपशील टाका',
+      orChoosePreset: 'किंवा तयार ग्रामीण उदाहरण निवडा:',
+      analyzeRecords: 'कर्ज पात्रता व सबसिडी तपासा',
+      viewSchemes: 'पात्र योजना पहा',
+      generateDossier: 'बँक अहवाल तयार करा',
+      middlemanCutWarning: 'दलाल १०-१५% खातात - इथे शून्य शुल्क!',
+      moneylenderCostWarning: 'सावकार २४-३६% व्याज घेतात - सरकारी योजनेत फक्त ५-९%!',
+      estimatedSubsidy: 'अंदाजे सरकारी अनुदान (सब्सिडी):',
+      dscrMetric: 'हप्ता भरण्याची क्षमता (DSCR):',
+      riskScore: 'विश्वासार्हता गुण:',
+      consentStatement: 'माझ्या संमतीने ही माहिती फक्त बँक कर्ज प्रक्रियेसाठी वापरली जाईल.',
+      branchManagerTitle: 'बँक शाखा व्यवस्थापक / बँक मित्र डेस्क',
+      fieldQuestionsTitle: 'क्षेत्रीय प्रश्न व वस्तुस्थिती (PDF संदर्भ)',
+      approvedByEntrepreneur: 'उद्योजकाद्वारे सत्यापित व संमत',
+      downloadDossier: 'अहवाल डाउनलोड करा',
+      printDossier: 'प्रिंट काढा',
+    },
+  },
+  bn: {
+    appName: 'সহায় ক্রেডিট AI',
+    tagline: 'গ্রামীণ ক্ষুদ্র উদ্যোক্তাদের জন্য সরাসরি সরকারি প্রকল্প ও ব্যাঙ্ক ঋণ সহায়ক',
+    badge: 'দালালমুক্ত · আইটিআর প্রয়োজন নেই · সম্পূর্ণ বিনামূল্যে',
+    listenAudio: 'ভয়েসে শুনুন',
+    stopAudio: 'বন্ধ করুন',
+    voiceGuide: 'অডিও নির্দেশিকা',
+    askAssistant: 'সহায় মিত্রকে জিজ্ঞাসা করুন',
+    selectLanguage: 'ভাষা নির্বাচন করুন',
+    steps: {
+      businessProfile: '১. ব্যবসা ও গ্রাম',
+      informalProof: '২. খাতা বহি / ইউপিআই',
+      aiAnalysis: '৩. ঋণ সক্ষমতা যাচাই',
+      schemeMatches: '৪. সরকারি প্রকল্প',
+      bankDossier: '৫. ব্যাঙ্ক ডসিয়ার',
+    },
+    businessTypes: {
+      tailor: 'দর্জি ও সেলাই কেন্দ্র',
+      dairy: 'দুগ্ধ খামার ও পশুপালন',
+      fabrication: 'ওয়েল্ডিং ও ওয়ার্কশপ',
+      shg_enterprise: 'মহিলা স্বনির্ভর দল (SHG)',
+      kirana: 'মুদিখানা ও গ্রামীণ দোকান',
+      vishwakarma_artisan: 'ছুতোর / কামার / কারিগর',
+    },
+    prompts: {
+      heroWelcome:
+        'নমস্কার! সহায় ক্রেডিটে আপনাকে স্বাগত। আইটিআর না থাকলেও আপনার ইউপিআই ও খাতার হিসাব দিয়ে মুদ্রা ও পিএমইজিপি প্রকল্পে সহজে ঋণ পাওয়া সম্ভব। দালালদের টাকা দেবেন না।',
+      chooseBusinessAudio:
+        'আপনার ব্যবসার ধরন বেছে নিন এবং কত ঋণ প্রয়োজন তা লিখুন।',
+      recordUploadAudio:
+        'আপনার ইউপিআই রেকর্ড বা দুধ বিক্রির রশিদ যোগ করুন অথবা নমুনা বেছে নিন।',
+      analysisAudio:
+        'আপনার মাসিক সঞ্চয় এবং কিস্তি পরিশোধের ক্ষমতা যাচাই করা হচ্ছে।',
+      dossierAudio:
+        'আপনার ব্যাঙ্ক ডসিয়ার প্রস্তুত হয়েছে। সরকারি ভর্তুকির বিবরণ এতে সংযুক্ত রয়েছে।',
+    },
+    labels: {
+      monthlyIncome: 'মাসিক বিক্রি / আয় (₹)',
+      loanAmount: 'প্রয়োজনীয় ঋণ (₹)',
+      category: 'শ্রেণি (ভর্তুকির জন্য)',
+      gender: 'লিঙ্গ',
+      village: 'গ্রাম',
+      district: 'জেলা',
+      uploadRecords: 'খাতা বা ইউপিআই রেকর্ড লিখুন',
+      orChoosePreset: 'অথবা নমুনা উদাহরণ বেছে নিন:',
+      analyzeRecords: 'ঋণ যোগ্যতা যাচাই করুন',
+      viewSchemes: 'প্রকল্পগুলি দেখুন',
+      generateDossier: 'ব্যাঙ্ক ডসিয়ার তৈরি করুন',
+      middlemanCutWarning: 'দালালরা ১০-১৫% কেটে নেয় - এখানে শূন্য খরচ!',
+      moneylenderCostWarning: 'মহাজনরা ২৪-৩৬% সুদ নেয় - সরকারি প্রকল্পে মাত্র ৫-৯%!',
+      estimatedSubsidy: 'আনুমানিক সরকারি অনুদান:',
+      dscrMetric: 'পরিশোধের সক্ষমতা (DSCR):',
+      riskScore: 'বিশ্বাসযোগ্যতা স্কোর:',
+      consentStatement: 'আমার সম্মতিক্রমে এই তথ্য কেবল ব্যাঙ্ক ঋণ প্রসেসিংয়ে ব্যবহৃত হবে।',
+      branchManagerTitle: 'ব্যাঙ্ক শাখা ব্যবস্থাপক পোর্টাল',
+      fieldQuestionsTitle: 'মাঠ পর্যায়ের প্রশ্ন ও বাস্তবতা',
+      approvedByEntrepreneur: 'উদ্যোক্তা দ্বারা যাচাইকৃত',
+      downloadDossier: 'ডসিয়ার ডাউনলোড করুন',
+      printDossier: 'প্রিন্ট নিন',
+    },
+  },
+  kn: {
+    appName: 'ಸಹಾಯ್ ಕ್ರೆಡಿಟ್ AI',
+    tagline: 'ಗ್ರಾಮೀಣ ಸಣ್ಣ ಉದ್ಯಮಿಗಳಿಗೆ ನೇರ ಸರ್ಕಾರಿ ಯೋಜನೆ ಮತ್ತು ಬ್ಯಾಂಕ್ ಸಾಲ ಮಾರ್ಗದರ್ಶಿ',
+    badge: 'ಮಧ್ಯವರ್ತಿಗಳಿಲ್ಲ · ಐಟಿಆರ್ ಅಗತ್ಯವಿಲ್ಲ · ಉಚಿತ',
+    listenAudio: 'ಆಲಿಸಿ',
+    stopAudio: 'ನಿಲ್ಲಿಸಿ',
+    voiceGuide: 'ಧ್ವನಿ ಮಾರ್ಗದರ್ಶಿ',
+    askAssistant: 'ಸಹಾಯ್ ಮಿತ್ರನನ್ನು ಕೇಳಿ',
+    selectLanguage: 'ಭಾಷೆ',
+    steps: {
+      businessProfile: '೧. ವ್ಯಾಪಾರ ಮತ್ತು ಗ್ರಾಮ',
+      informalProof: '೨. ಖಾತಾ ಪುಸ್ತಕ / UPI',
+      aiAnalysis: '೩. ಸಾಲ ಅರ್ಹತೆ ವಿಶ್ಲೇಷಣೆ',
+      schemeMatches: '೪. ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು',
+      bankDossier: '೫. ಬ್ಯಾಂಕ್ ವರದಿ',
+    },
+    businessTypes: {
+      tailor: 'ಟೈಲರಿಂಗ್ ಮತ್ತು ಬಟ್ಟೆ ಹೊಲಿಯುವ ಕೇಂದ್ರ',
+      dairy: 'ಡೈರಿ ಮತ್ತು ಹೈನುಗಾರಿಕೆ',
+      fabrication: 'ವೆಲ್ಡಿಂಗ್ ಮತ್ತು ಕಮ್ಮಾರಿಕೆ',
+      shg_enterprise: 'ಮಹಿಳಾ ಸ್ವಸಹಾಯ ಸಂಘ',
+      kirana: 'ಕಿರಾಣಿ ಮತ್ತು ಗ್ರಾಮದ ಅಂಗಡಿ',
+      vishwakarma_artisan: 'ಬಡಿಗ / ಕಮ್ಮಾರ / ಕುಶಲಕರ್ಮಿ',
+    },
+    prompts: {
+      heroWelcome:
+        'ನಮಸ್ಕಾರ! ಸಹಾಯ್ ಕ್ರೆಡಿಟ್‌ಗೆ ಸ್ವಾಗತ. ನಿಮ್ಮ ಬಳಿ ಐಟಿಆರ್ ಇಲ್ಲದಿದ್ದರೂ ನಿಮ್ಮ ಯುಪಿಐ ಮತ್ತು ಖಾತಾ ಪುಸ್ತಕದ ಮೂಲಕ ಮುದ್ರಾ ಮತ್ತು ಪಿಎಂಇಜಿಪಿ ಸಾಲ ಪಡೆಯಬಹುದು.',
+      chooseBusinessAudio:
+        'ನಿಮ್ಮ ವ್ಯಾಪಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಅಗತ್ಯವಿರುವ ಸಾಲದ ಮೊತ್ತವನ್ನು ನಮೂದಿಸಿ.',
+      recordUploadAudio:
+        'ನಿಮ್ಮ ಯುಪಿಐ ಅಥವಾ ಹಾಲಿನ ರಸೀದಿಯನ್ನು ನಮೂದಿಸಿ ಅಥವಾ ನಮ್ಮ ಉದಾಹರಣೆಯನ್ನು ಆರಿಸಿ.',
+      analysisAudio:
+        'ನಿಮ್ಮ ಮಾಸಿಕ ಉಳಿತಾಯ ಮತ್ತು ಸಾಲ ಮರುಪಾವತಿ ಸಾಮರ್ಥ್ಯವನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ.',
+      dossierAudio:
+        'ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ವರದಿ ಸಿದ್ಧವಾಗಿದೆ. ಇದರಲ್ಲಿ ಸರ್ಕಾರದ ಸಬ್ಸಿಡಿ ವಿವರಗಳಿವೆ.',
+    },
+    labels: {
+      monthlyIncome: 'ಮಾಸಿಕ ಆದಾಯ (₹)',
+      loanAmount: 'ಅಗತ್ಯ ಸಾಲದ ಮೊತ್ತ (₹)',
+      category: 'ಸಾಮಾಜಿಕ ವರ್ಗ',
+      gender: 'ಲಿಂಗ',
+      village: 'ಗ್ರಾಮ',
+      district: 'ಜಿಲ್ಲೆ',
+      uploadRecords: 'ಖಾತಾ ಅಥವಾ ಯುಪಿಐ ವಿವರ ನಮೂದಿಸಿ',
+      orChoosePreset: 'ಅಥವಾ ಉದಾಹರಣೆಯನ್ನು ಆರಿಸಿ:',
+      analyzeRecords: 'ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ',
+      viewSchemes: 'ಯೋಜನೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ',
+      generateDossier: 'ಬ್ಯಾಂಕ್ ವರದಿ ರಚಿಸಿ',
+      middlemanCutWarning: 'ಮಧ್ಯವರ್ತಿಗಳು 10-15% ಕಮಿಷನ್ ಪಡೆಯುತ್ತಾರೆ - ಇಲ್ಲಿ ಶೂನ್ಯ ಶುಲ್ಕ!',
+      moneylenderCostWarning: 'ಲೇವಿದೇವಿಗಾರರು 24-36% ಬಡ್ಡಿ ವಿಧಿಸುತ್ತಾರೆ - ಬ್ಯಾಂಕಿನಲ್ಲಿ ಕೇವಲ 5-9%!',
+      estimatedSubsidy: 'ಅಂದಾಜು ಸರ್ಕಾರಿ ಸಬ್ಸಿಡಿ:',
+      dscrMetric: 'ಮರುಪಾವತಿ ಸಾಮರ್ಥ್ಯ (DSCR):',
+      riskScore: 'ವಿಶ್ವಾಸಾರ್ಹತೆ ಸ್ಕೋರ್:',
+      consentStatement: 'ನನ್ನ ಸಮ್ಮತಿಯೊಂದಿಗೆ ಈ ಡೇಟಾವನ್ನು ಬ್ಯಾಂಕ್ ಸಾಲಕ್ಕಾಗಿ ಮಾತ್ರ ಬಳಸಲಾಗುತ್ತದೆ.',
+      branchManagerTitle: 'ಬ್ಯಾಂಕ್ ಶಾಖಾ ವ್ಯವಸ್ಥಾಪಕರ ಪೋರ್ಟಲ್',
+      fieldQuestionsTitle: 'ಕ್ಷೇತ್ರ ಪ್ರಶ್ನೆಗಳು ಮತ್ತು ನೈಜತೆ',
+      approvedByEntrepreneur: 'ಉದ್ಯಮಿಯಿಂದ ದೃಢೀಕರಿಸಲ್ಪಟ್ಟಿದೆ',
+      downloadDossier: 'ವರದಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ',
+      printDossier: 'ಪ್ರಿಂಟ್ ಮಾಡಿ',
+    },
+  },
+  gu: {
+    appName: 'સહાય ક્રેડિટ AI',
+    tagline: 'ગ્રામીણ સૂક્ષ્મ ઉદ્યોગસાહસિકો માટે સરકારી યોજના અને બેંક લોન સહાયક',
+    badge: 'દલાલમુક્ત · ITR જરૂરી નથી · 100% મફત',
+    listenAudio: 'સાંભળો',
+    stopAudio: 'અવાજ બંધ કરો',
+    voiceGuide: 'ઓડિયો માર્ગદર્શિકા',
+    askAssistant: 'સહાય મિત્રને પૂછો',
+    selectLanguage: 'ભાષા',
+    steps: {
+      businessProfile: '૧. વ્યવસાય અને ગામ',
+      informalProof: '૨. ખાતાવહી / UPI',
+      aiAnalysis: '૩. લોન ક્ષમતા ચકાસણી',
+      schemeMatches: '૪. સરકારી યોજનાઓ',
+      bankDossier: '૫. બેંક રિપોર્ટ',
+    },
+    businessTypes: {
+      tailor: 'દરજી અને સિલાઈ કેન્દ્ર',
+      dairy: 'ડેરી અને પશુપાલન',
+      fabrication: 'વેલ્ડિંગ અને વર્કશોપ',
+      shg_enterprise: 'મહિલા સ્વસહાય જૂથ (SHG)',
+      kirana: 'કરિયાણા અને ગામની દુકાન',
+      vishwakarma_artisan: 'સુથાર / લુહાર / પરંપરાગત કારીગર',
+    },
+    prompts: {
+      heroWelcome:
+        'નમસ્તે! સહાય ક્રેડિટમાં આપનું સ્વાગત છે. જો તમારી પાસે ITR નથી, તો પણ UPI અને ખાતાવહીના વ્યવહારોથી મુદ્રા અને PMEGP લોન સરળતાથી મળી શકે છે. દલાલને પૈસા આપશો નહીં.',
+      chooseBusinessAudio:
+        'કૃપા કરીને તમારો વ્યવસાય પસંદ કરો અને જરૂરી લોનની રકમ દાખલ કરો.',
+      recordUploadAudio:
+        'તમારો UPI રેકોર્ડ અથવા દૂધની સ્લિપ દાખલ કરો અથવા નમૂના પસંદ કરો.',
+      analysisAudio:
+        'તમારી માસિક કમાણી અને હપ્તો ભરવાની ક્ષમતા તપાસવામાં આવી રહી છે.',
+      dossierAudio:
+        'તમારો બેંક રિપોર્ટ તૈયાર છે. તેમાં સરકારી સબસિડીની વિગતો પણ સામેલ છે.',
+    },
+    labels: {
+      monthlyIncome: 'માસિક આવક (₹)',
+      loanAmount: 'જરૂરી લોન રકમ (₹)',
+      category: 'સામાજિક વર્ગ',
+      gender: 'જાતિ',
+      village: 'ગામ',
+      district: 'જિલ્લો',
+      uploadRecords: 'ખાતાવહી અથવા UPI રેકોર્ડ લખો',
+      orChoosePreset: 'અથવા નમૂનો પસંદ કરો:',
+      analyzeRecords: 'પાત્રતા અને સબસિડી તપાસો',
+      viewSchemes: 'યોજનાઓ જુઓ',
+      generateDossier: 'બેંક રિપોર્ટ બનાવો',
+      middlemanCutWarning: 'દલાલો ૧૦-૧૫% કમિશન લે છે - અહીં શૂન્ય ફી!',
+      moneylenderCostWarning: 'શાહુકારો ૨૪-૩૬% વ્યાજ વસૂલે છે - બેંકમાં માત્ર ૫-૯%!',
+      estimatedSubsidy: 'અંદાજિત સરકારી સબસિડી:',
+      dscrMetric: 'હપ્તો ભરવાની ક્ષમતા (DSCR):',
+      riskScore: 'વિશ્વસનીયતા સ્કોર:',
+      consentStatement: 'મારી સંમતિથી જ આ ડેટા બેંક લોન પ્રક્રિયા માટે વપરાશે.',
+      branchManagerTitle: 'બેંક શાખા પ્રબંધક પોર્ટલ',
+      fieldQuestionsTitle: 'ક્ષેત્રીય પ્રશ્નો અને વાસ્તવિકતા',
+      approvedByEntrepreneur: 'ઉદ્યોગસાહસિક દ્વારા ચકાસાયેલ',
+      downloadDossier: 'રિપોર્ટ ડાઉનલોડ કરો',
+      printDossier: 'પ્રિન્ટ કરો',
+    },
+  },
+};

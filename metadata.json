@@ -1,0 +1,6 @@
+{
+  "name": "SahayCredit AI - Rural MSME Scheme & Credit Bridge",
+  "description": "Voice-guided, multilingual bridge connecting village micro-enterprises with formal bank credit and government schemes (MUDRA, PMEGP, Stand-Up India, CGTMSE) using informal cashflow proofs.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
